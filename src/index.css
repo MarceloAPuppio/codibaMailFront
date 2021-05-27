@@ -1,12 +1,15 @@
 :root{
   --bg-dark:#191d30;
   --bg-medium:#222743;
-  --bg-semilight:#fafafa;
+  --bg-semilight:#eeeaea;
   --bg-light:#ffffff;
   --acent:#ef634e;
   --bg-border:#c8c8c8;
   --text-dark:#2f2f2f;
   --text:#707070;
+  --text-light:#fafafa;
+
+  --headerHeight:3.5rem;
 
 
 }
@@ -17,7 +20,138 @@
 }
 html{
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 body{
   color:var(--text)
+}
+/*
+🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞HEADER🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞🌞
+*/
+header{
+  background: var(--bg-dark);
+  height: var(--headerHeight);
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+*/
+main{
+  height: calc(100vh - var(--headerHeight));
+  width: 100vw;
+  background: #191d30;
+  display: grid;
+  grid-template-columns: 4rem 18rem 30rem 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:"settingsNav ppalNav tools main";
+}
+
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 NAV SETTINGS🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
+*/
+.nav-settings{
+  grid-area: settingsNav;
+  background: var(--bg-dark);
+}
+.nav-ppal__list{
+  list-style: none;
+}
+.nav-ppal__list-item{
+ height: 5rem;
+ padding: 2rem 0;
+ padding-left: 4rem;
+ color: var(--text-light);
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+}
+.nav-ppal__list-item span{
+  margin-left: 1rem;
+}
+.nav-ppal__list-item:nth-child(1){
+  background: var(--acent);
+
+}
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 NAV Ppal 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
+*/
+.nav-ppal{
+  grid-area: ppalNav;
+  background: var(--bg-medium);
+}
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 TOOLS 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
+*/
+.tools-panel{
+  grid-area: tools;
+  background: var(--bg-semilight);
+}
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 MAIN Panel🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
+*/
+.main-panel{
+  grid-area: main;
+  background: var(--bg-light);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr;
+  grid-template-areas:  "botonera"
+                        "form";
+}
+
+/*
+
+        <div className="main-form__from"></div>
+        <div className="main-form__to"></div>
+        <div className="main-form__cc"></div>
+        <div className="main-form__body"></div>
+        <div className="main-form__attachment"></div>
+        <div className="main-form__submit"></div>
+
+*/
+.main-panel__botonera{
+  grid-area: botonera;
+}
+.main-panel__form{
+  grid-area: form;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10rem 2rem 4rem 1fr 2rem 10rem;
+  grid-template-areas: "from"
+                       "to"
+                       "cc"
+                       "body"
+                       "attachment"
+                       "submit";
+}
+.main-form__from{
+  grid-area: from;
+  background: green;
+}
+.main-form__to{
+  grid-area: to;
+  background: crimson;
+}
+.main-form__cc{
+  grid-area: cc;
+  background: green;
+}
+.main-form__body{
+  grid-area: from;
+  background: red;
+}
+.main-form__attachment{
+  grid-area: attachment;
+  background: pink;
+}
+.main-form__submit{
+  grid-area: submit;
+  background: red;
 }

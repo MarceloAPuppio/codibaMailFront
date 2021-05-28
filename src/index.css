@@ -119,7 +119,19 @@ main{
 */
 .main-panel__botonera{
   grid-area: botonera;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding-top: 0.5rem;
+}
+.botonera__iconWrapper{
+  padding: 0 1.5rem;
+}
+.botonera__iconWrapper:first-of-type{
+  padding-left: 2rem;
+}
+
+.botonera__iconWrapper:not(:first-of-type){
+  border-left: solid var(--bg-border) 0.2rem;
 }
 .main-panel__form{
   grid-area: form;
@@ -180,10 +192,24 @@ font-weight: bold;
   border-radius: 0.3rem;
   margin-right: 0.5rem;
 }
+.main-form__to__addressee--otherColor{
+  background: var(--acent);
+}
 .main-form__cc{
   grid-area: cc;
+  display: flex;
+  flex-flow: row wrap;
+  padding-left: 3rem;
+  position: relative;
   /* background: green; */
 }
+.main-form__cc::before{
+  position: absolute;
+  content: "Cc:";
+  left: 0.5rem;
+  top:15%;
+  font-weight: bold;
+  }
 .main-form__body{
   grid-area: body;
   /* background: red; */
@@ -194,5 +220,16 @@ font-weight: bold;
 }
 .main-form__submit{
   grid-area: submit;
-  /* background: red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2rem;
+}
+.submit__btn{
+  border:none;
+  border-radius: 2rem;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  width: 12rem;
+  height: 3rem;
 }

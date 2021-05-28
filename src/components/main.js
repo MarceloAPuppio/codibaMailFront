@@ -4,9 +4,15 @@ function Main() {
   return (
     <section className="main-panel">
       <div className="main-panel__botonera">
-        <i class="fas fa-save"></i>
-        <i class="fas fa-print"></i>
-        <i class="fas fa-trash-alt"></i>
+        <span className="botonera__iconWrapper">
+          <i class="fas fa-save"></i>
+        </span>
+        <span className="botonera__iconWrapper">
+          <i class="fas fa-print"></i>
+        </span>
+        <span className="botonera__iconWrapper">
+          <i class="fas fa-trash-alt"></i>
+        </span>
       </div>
       <form action="" className="main-panel__form">
         <div className="main-form__from">
@@ -22,15 +28,33 @@ function Main() {
         <div className="main-form__to">
           <Addressee name="Marcos" />
           <Addressee name="Marcos" />
-          <Addressee name="Marcos" />
-          <Addressee name="Marcos" />
-          <Addressee name="Marcos" />
         </div>
-        <div className="main-form__cc">Cc:</div>
+        <div className="main-form__cc">
+          <Addressee
+            name="Marcos"
+            clase="main-form__to__addressee--otherColor"
+          />
+          <Addressee
+            name="Marcos"
+            clase="main-form__to__addressee--otherColor"
+          />
+          <Addressee
+            name="Marcos"
+            clase="main-form__to__addressee--otherColor"
+          />
+          <Addressee
+            name="Marcos"
+            clase="main-form__to__addressee--otherColor"
+          />
+          <Addressee
+            name="Marcos"
+            clase="main-form__to__addressee--otherColor"
+          />
+        </div>
         <div className="main-form__body"></div>
         <div className="main-form__attachment"></div>
         <div className="main-form__submit">
-          <button>Send message</button>
+          <button className="submit__btn">Send message</button>
         </div>
       </form>
     </section>

@@ -18,6 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 html{
   font-size: 16px;
@@ -92,7 +93,26 @@ main{
 .tools-panel{
   grid-area: tools;
   background: var(--bg-semilight);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
 }
+.tools__contactDraggableContainer{
+  width: 80%;
+  height: 10rem;
+  outline: dashed green 0.2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.tools__contactDraggableContainer > *{
+  margin: 0.2rem;
+}
+
+
 /*
 ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 MAIN Panel🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
@@ -191,6 +211,7 @@ font-weight: bold;
   background: var(--mailTo);
   border-radius: 0.3rem;
   margin-right: 0.5rem;
+
 }
 .main-form__to__addressee--otherColor{
   background: var(--acent);

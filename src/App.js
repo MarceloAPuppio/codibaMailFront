@@ -27,6 +27,16 @@ function App() {
         shortName: "DAP",
         mail: "diego@codiba.com",
       },
+      {
+        name: "Leandro Vallone",
+        shortName: "Lean",
+        mail: "leandro@codiba.com",
+      },
+      {
+        name: "Adrian Berta",
+        shortName: "Adri",
+        mail: "adrian@codiba.com",
+      },
     ],
     dosAnclas: [],
     ciba: [],

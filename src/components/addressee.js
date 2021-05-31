@@ -4,7 +4,6 @@ function Addressee({ info }) {
   const handleDragStart = (e) => {
     e.dataTransfer.setData("id", e.target.id);
     e.dataTransfer.setData("object", JSON.stringify(info));
-    console.log(e, "dragstart", e.dataTransfer.getData("id"));
   };
   return (
     <div
@@ -15,7 +14,7 @@ function Addressee({ info }) {
       id={`destinatario${info.shortName}`}
     >
       <p>{info.shortName}</p>
-      <span>&times;</span>
+      {/* <span>&times;</span> */}
     </div>
   );
 }

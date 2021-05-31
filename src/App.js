@@ -32,9 +32,13 @@ function App() {
     ciba: [],
   };
   const [to, setTo] = useState([]);
+  const [cc, setCc] = useState([]);
+
   return (
     <Layout>
-      <ContextParameter.Provider value={{ to, setTo, DESTINATARIOS }}>
+      <ContextParameter.Provider
+        value={{ to, setTo, cc, setCc, DESTINATARIOS }}
+      >
         <nav className="nav-settings"></nav>
         <NavPpal />
         <ToolsPanel />

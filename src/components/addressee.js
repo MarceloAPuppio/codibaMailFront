@@ -6,7 +6,6 @@ function Addressee({ info }) {
     e.dataTransfer.setData("object", JSON.stringify(info));
     console.log(e, "dragstart", e.dataTransfer.getData("id"));
   };
-  console.log(info);
   return (
     <div
       className="main-form__to__addressee"

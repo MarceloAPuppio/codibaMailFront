@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ContextParameter from "../ContextParameters";
 function FormMailer() {
-  const { to, setTo } = useContext(ContextParameter);
+  const { to, setTo, cc, setCc } = useContext(ContextParameter);
   const handleDragOver = (e) => {
     e.preventDefault();
   };
@@ -9,12 +9,15 @@ function FormMailer() {
   const handleDrop = (e) => {
     let objeto = e.dataTransfer.getData("object");
     console.log(objeto);
-    setTo([...to, JSON.parse(objeto)]);
     let DOMElement = document.getElementById(e.dataTransfer.getData("id"));
     e.target.appendChild(DOMElement);
-    e.target.classList.contains("main-form__cc")
-      ? DOMElement.classList.add("main-form__to__addressee--otherColor")
-      : DOMElement.classList.remove("main-form__to__addressee--otherColor");
+    if (e.target.classList.contains("main-form__cc")) {
+      DOMElement.classList.add("main-form__to__addressee--otherColor");
+      setCc([...cc, JSON.parse(objeto)]);
+    } else {
+      DOMElement.classList.remove("main-form__to__addressee--otherColor");
+      setTo([...to, JSON.parse(objeto)]);
+    }
   };
   return (
     <form action="" className="main-panel__form">

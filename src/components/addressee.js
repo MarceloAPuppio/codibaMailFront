@@ -1,19 +1,21 @@
 import React from "react";
 
-function Addressee({ name, clase }) {
+function Addressee({ info }) {
   const handleDragStart = (e) => {
     e.dataTransfer.setData("id", e.target.id);
+    e.dataTransfer.setData("object", JSON.stringify(info));
     console.log(e, "dragstart", e.dataTransfer.getData("id"));
   };
+  console.log(info);
   return (
     <div
-      className={`main-form__to__addressee ${clase ? clase : ""}`}
+      className="main-form__to__addressee"
       draggable="true"
       onDragStart={handleDragStart}
       onDrop={(e) => e.stopPropagation()}
-      id={`destinatario${name}`}
+      id={`destinatario${info.shortName}`}
     >
-      <p>{name}</p>
+      <p>{info.shortName}</p>
       <span>&times;</span>
     </div>
   );

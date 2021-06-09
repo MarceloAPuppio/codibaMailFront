@@ -39,7 +39,7 @@ header{
   padding: 0 1rem;
 }
 /*
-⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 */
 main{
   height: calc(100vh - var(--headerHeight));
@@ -52,7 +52,7 @@ main{
 }
 
 /*
-⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 NAV SETTINGS🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
 */
 .nav-settings{
@@ -79,7 +79,7 @@ main{
 
 }
 /*
-⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 NAV Ppal 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
 */
 .nav-ppal{
@@ -87,7 +87,7 @@ main{
   background: var(--bg-medium);
 }
 /*
-⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 TOOLS 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
 */
 .tools-panel{
@@ -111,10 +111,110 @@ main{
 .tools__contactDraggableContainer > *{
   margin: 0.2rem;
 }
-
-
 /*
-⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
+<div className="tools__addProduct">
+          <form action="" onSubmit={(e) => e.preventDefault()}>
+        <label htmlFor="product" className="add-product__label">
+          <input
+            className="add-product__input"
+          />
+          <span className="add-product__span">Código</span>
+        </label>
+        <label htmlFor="number" className="add-product__label">
+          <input
+            className="add-product__input"
+          />
+          <span className="add-product__input">Número</span>
+        </label>
+        <button className="add-product__button">
+          <MdAddShoppingCart />
+        </button>
+      </form>
+      </div>
+*/
+.tools__addProduct{
+  width: calc( 80% + 0.4rem);
+  /*BORRAR este margin, manejarlo desde el flex del padre*/
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-product__form{
+  width: 100%;
+  height: 100%;
+  padding: 0 0.2rem;
+  /* background: green; */
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+}
+.add-product__label{
+  display: inline-block;
+  position: relative;
+  height: 3rem;
+  width: 9rem;
+  overflow: hidden;
+}
+.add-product__span, .add-product__input{
+  position: absolute;
+  top:0.5rem
+}
+.add-product__input{
+  height: 2rem;
+  border: none;
+  width: 100%;
+  border-radius: 0.2rem;
+  text-align: center;
+}
+.add-product__input:not(:placeholder-shown)+span{
+  opacity: 1;
+  transform: translate(0.1rem, -0.1rem);
+}
+
+.add-product__input:valid{
+  border: olivedrab 2px solid;
+}
+.add-product__input:invalid{
+  border: red 2px solid;
+  animation: zumbido 0.1s linear;
+  animation-iteration-count: 3;
+}
+.add-product__input:focus{
+  outline: none;
+  border: solid 2px cornflowerblue
+}
+@keyframes zumbido{
+  0%{transform: rotate(2deg);}
+  25%{transform: rotate(0deg);}
+  50%{transform: rotate(-2deg);}
+  100%{transform: rotate(0deg);}
+}
+.add-product__span{
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  font-size: small;
+}
+.add-product__button{
+  background: transparent;
+  display: grid;
+place-items: center;
+  border: none;
+  transition: transform 0.1s ease-in-out;
+}
+.add-product__button:hover{
+  transform: scale(1.1);
+}
+
+.add-product__button>*{
+  font-size: 1.6rem;
+}
+/*
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐MAIN⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽 MAIN Panel🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
 */
 .main-panel{

@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { MdAddShoppingCart } from "react-icons/md";
+import ContextParameters from '../ContextParameters';
 function ItemProduct() {
   const products = [
     { cod: 43144, name: "Sal fina seca x 25 kg", bolsasPallet: 50 },
@@ -9,6 +10,15 @@ function ItemProduct() {
     { cod: 32115, name: "Sal entrefina lavada x 50 kg", bolsasPallet: 24 },
   ];
   const inputNumber = useRef(null);
+  const inputText = useRef(null);
+
+  const {bodyPedidos, setBodyPedidos}= useContext(ContextParameters);
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    setBodyPedidos([...bodyPedidos, {codigo:inputText.current.value, cantidad: inputNumber.current.value}])
+    e.target.reset();
+    // console.log(inputNumber.current.value, inputText.current.value)
+  }
   const handleOnChange = (e) => {
     inputNumber.current.value = "";
     //De esta manera se logra que los numeros del input sean múltiplos de la cantidad de bolsas por pallet
@@ -26,11 +36,12 @@ function ItemProduct() {
     <>
       <form
         action=""
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={handleSubmit}
         className="add-product__form"
       >
         <label htmlFor="product" className="add-product__label">
           <input
+           ref={inputText}
             placeholder="Código"
             list="products"
             name="product"
@@ -58,7 +69,7 @@ function ItemProduct() {
             placeholder="Cantidad"
             className="add-product__input"
           />
-          <span className="add-product__span">Número</span>
+          <span className="add-product__span">Cantidad</span>
         </label>
         <button className="add-product__button">
           <MdAddShoppingCart />

@@ -105,7 +105,7 @@ main{
   outline: dashed green 0.2rem;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-content: flex-start;
 }
 .tools__contactDraggableContainer > *{
@@ -186,7 +186,7 @@ main{
 }
 .add-product__input:focus{
   outline: none;
-  border: solid 2px cornflowerblue
+  /* border: solid 2px cornflowerblue */
 }
 @keyframes zumbido{
   0%{transform: rotate(2deg);}

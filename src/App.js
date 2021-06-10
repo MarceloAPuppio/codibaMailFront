@@ -43,11 +43,13 @@ function App() {
   };
   const [to, setTo] = useState([]);
   const [cc, setCc] = useState([]);
+  const [bodyPedidos, setBodyPedidos] = useState([]);
+
 
   return (
     <Layout>
       <ContextParameter.Provider
-        value={{ to, setTo, cc, setCc, DESTINATARIOS }}
+        value={{ to, setTo, cc, setCc, DESTINATARIOS, bodyPedidos, setBodyPedidos }}
       >
         <nav className="nav-settings"></nav>
         <NavPpal />
